@@ -13,7 +13,7 @@ let app = express();
 app.use(function(res, req, next){
     res.header("Access-Control-Allow-Access", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    res.header("Acces-Control-Allow-Menthods", "GET, PUT, POST, DELETE, OPTIONS");
+    res.header("Acces-Control-Allow-Methods", "GET, PUT, POST, DELETE, OPTIONS");
     next();
 });
 app.use(bodyParser.json());
