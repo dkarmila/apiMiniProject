@@ -28,11 +28,11 @@ app.use('/api', barangRoute);
 let kategoriBarangRoute = require("./kategoribarang/kategoribarangRoute.js");
 app.use('/api', kategoriBarangRoute);
 
-// let pembelianRoute = require('./pembelian/pembelianRoute.js');
-// app.use('/api', pembelianRoute);
+let pembelianRoute = require('./pembelian/pembelianRoute.js');
+app.use('/api', pembelianRoute);
 
-// let pembelianDetailRoute =require('./pembeliandetail/pembeliandetailRoute.js');
-// app.use('/api', pembelianDetailRoute);
+let pembelianDetailRoute =require('./pembeliandetail/pembeliandetailRoute.js');
+app.use('/api', pembelianDetailRoute);
 
 // let petugasRoute = require('./petugas/petugasRoute');
 // app.use('/api',petugasRoute);
