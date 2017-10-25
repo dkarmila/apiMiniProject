@@ -25,8 +25,8 @@ app.set('port', (process.env.PORT || 8889));
 let barangRoute = require("./barang/barangRoute.js");
 app.use('/api', barangRoute);
 
-// let kategoriBarangRoute = require("./kategoribarang/kategoribarangRoute.js");
-// app.use('/api', kategoriBarangRoute);
+let kategoriBarangRoute = require("./kategoribarang/kategoribarangRoute.js");
+app.use('/api', kategoriBarangRoute);
 
 // let pembelianRoute = require('./pembelian/pembelianRoute.js');
 // app.use('/api', pembelianRoute);
