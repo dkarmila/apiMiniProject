@@ -1,6 +1,6 @@
 let express = require('express');
 let router = express.Router();
-let kategoriBarangController = require('./kategoriBarangController.js');
+let kategoriBarangController = require('./kategoribarangController.js');
 
 router.get('/kategoribarang', function(req,res){
     kategoriBarangController.getKategoriBarang(function(err,respon){
