@@ -12,10 +12,9 @@ module.exports.createPelanggan = function(prpns,callback){
     Pelanggan.create(prpns,callback);
 }
 
-module.exports.getNamaPelanggan = function(nmplnggn,callback){
-	Pelanggan.find({NamaPelanggan:nmplnggn},callback);
+module.exports.getPelangganByNamaPelanggan = function(namapelanggan,callback){
+    Pelanggan.find({NamaPelanggan:namapelanggan},callback);
 }
-
 module.exports.removePelanggan = function(_id,callback){
     Pelanggan.findByIdAndRemove(_id,callback);
 }

@@ -18,6 +18,15 @@ route.get('/pelanggan/:_id',function(req,res){
         res.json(respon);
     });
 });
+route.get('/namapelanggan/:namapelanggan',function(req,res){
+	let namapelanggan = req.params.namapelanggan;
+    pelangganController.getPelangganByNamaPelanggan(namapelanggan,function(err,respon){
+        if(err){
+            throw err;
+        }
+        res.json(respon);
+    });
+});
 route.post('/pelanggan',function(req,res){
     let prpns = req.body;
     pelangganController.createPelanggan(prpns,function(err,respon){
@@ -43,16 +52,6 @@ route.put('/pelanggan/:_id',function(req,res){
         }
         res.json(respon);
     });
-});
-
-route.get('/cari/namapelanggan/:namapelanggan', function(req,res){
-	let nmplnggn = req.params.namapelanggan;
-	pelangganController.getNamaPelanggan(nmplnggn,function(err,respon){
-		if(err){
-			throw err;
-		}
-		res.json(respon);
-	});
 });
 
 module.exports = route;
