@@ -28,7 +28,7 @@ router.put('/barang/:id', function(req,res){
         if(err){
             throw err;
         };
-        rea.json(respon);
+        res.json(respon);
     });
 });
 

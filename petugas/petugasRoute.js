@@ -18,6 +18,15 @@ route.get('/petugas/:_id',function(req,res){
         res.json(respon);
     });
 });
+route.get('/namapetugas/:namapetugas',function(req,res){
+	let namapetugas = req.params.namapetugas;
+    petugasController.getPetugasByNamaPetugas(namapetugas,function(err,respon){
+        if(err){
+            throw err;
+        }
+        res.json(respon);
+    });
+});
 route.post('/petugas',function(req,res){
     let prpns = req.body;
     petugasController.createPetugas(prpns,function(err,respon){

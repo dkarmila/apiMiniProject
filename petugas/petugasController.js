@@ -8,6 +8,10 @@ module.exports.getPetugasById = function(_id,callback){
     Petugas.findById(_id,callback);
 }
 
+module.exports.getPetugasByNamaPetugas = function(namapetugas,callback){
+    Petugas.find({NamaPetugas:namapetugas},callback);
+}
+
 module.exports.createPetugas = function(prpns,callback){
     Petugas.create(prpns,callback);
 }
