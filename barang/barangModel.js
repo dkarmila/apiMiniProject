@@ -12,7 +12,9 @@ let barang = mongoose.Schema(
 		TypeBarang: String,
 		StokAwal: Number,
 		StokAkhir: Number,
-		HargaBarang: Number
+		HargaBarang: Number,
+		GambarBarang: String,
+		KetBarang: String
     },{
         collection: 'Barang'
     }
