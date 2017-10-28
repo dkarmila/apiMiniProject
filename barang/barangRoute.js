@@ -21,6 +21,15 @@ router.get('/barang/:id', function(req,res){
     });
 });
 
+// router.get('/barang/kat/:kdKat', function(req,res){
+	// barangController.getBarangByKdKat(req.params.kdKat, function(err,respon){
+        // if(err){
+            // throw err;
+        // };
+        // res.json(respon);
+    // });
+// });
+
 //update
 router.put('/barang/:id', function(req,res){
     let dataBarang = req.body;

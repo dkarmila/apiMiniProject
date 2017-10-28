@@ -20,6 +20,15 @@ router.get('/kategoribarang/:id', function(req, res){
     });
 });
 
+router.get('/kategoribarang/kat/:kd', function(req, res){
+    kategoriBarangController.getKategoriBarangByKdKat(req.params.kd, function(err,respon){
+        if(err){
+            throw err;
+        };
+        res.json(respon);
+    });
+});
+
 router.put('/kategoribarang/:id', function(req,res){
     let dataKategori = req.body;
     kategoriBarangController.updateKategoriBarang(req.params.id, dataKategori, function(err,respon){
