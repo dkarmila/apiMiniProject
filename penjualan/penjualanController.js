@@ -1,7 +1,24 @@
 Penjualan = require('./penjualanModel.js');
 
+// module.exports.getPenjualan = function(callback,limit){
+    // Penjualan.find(callback).limit(limit);
+// }
 module.exports.getPenjualan = function(callback,limit){
-    Penjualan.find(callback).limit(limit);
+    Penjualan.aggregate([
+	{
+		"$lookup":{
+			from:"Petugas",
+			localField:"KdPetugas",
+			foreignField:"KdPetugas",
+			as:"petugasInfo"}
+	},{
+            "$lookup":{
+			from:"Pelanggan",
+			localField:"KdPelanggan",
+			foreignField:"KdPelanggan",
+			as:"pelangganInfo"}
+            }
+],callback);
 }
 
 module.exports.getPenjualanById = function(_id,callback){
