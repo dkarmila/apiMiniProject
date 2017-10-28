@@ -20,6 +20,15 @@ router.get('/pembeliandetail/:id', function(req,res){
     });
 });
 
+router.get('/pembeliandetail/rinci/:kdBeli', function(req,res){
+    pembelianDetailController.getPembelianDetailByKdBeli(req.params.kdBeli, function(err,respon){
+        if(err){
+            throw err;
+        };
+        res.json(respon);
+    });
+});
+
 router.put('/pembeliandetail/:id', function(req,res){
     let dataPembelianDetail = req.body;
     pembelianDetailController.updatePembelianDetail(req.params.id, dataPembelianDetail, function(err,respon){

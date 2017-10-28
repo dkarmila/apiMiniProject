@@ -3,8 +3,8 @@ let pelanggan = mong.Schema({
     KdPelanggan:String,
     NamaPelanggan:String,
     AlamatPelanggan:String,
-	NoRmh: Number,
-	NoTelp: Number,
+	NoRmh: String,
+	NoTelp: String,
 	UsernamePelanggan:String,
 	PasswordPelanggan:String
 });

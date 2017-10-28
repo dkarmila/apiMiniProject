@@ -8,6 +8,10 @@ module.exports.getPembelianDetailById = function(id, callback){
     PembelianDetail.findById(id, callback);
 }
 
+module.exports.getPembelianDetailByKdBeli = function(kdBeli, callback){
+    PembelianDetail.find({KdPembelian:kdBeli}, callback);
+}
+
 module.exports.updatePembelianDetail = function(id, dataPembelianDetail, callback){
     PembelianDetail.findByIdAndUpdate(id, dataPembelianDetail, callback);
 }
