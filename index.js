@@ -22,6 +22,12 @@ app.set('port', (process.env.PORT || 8889));
 // let loginRoute = require("./login/loginRoute.js");
 // app.use('/api', loginRoute);
 
+let merkRoute = require("./merk/merkRoute.js");
+app.use('/api', merkRoute);
+
+let kategoriRoute = require("./kategori/kategoriRoute.js");
+app.use('/api', kategoriRoute);
+
 let barangRoute = require("./barang/barangRoute.js");
 app.use('/api', barangRoute);
 

@@ -11,6 +11,15 @@ router.get('/barang', function(req,res){
     });
 });
 
+router.get('/barang/agregat', function(req,res){
+    barangController.getBarangAgregat(function(err,respon){
+        if(err){
+            throw err;
+        };
+        res.json(respon);
+    });
+});
+
 //read by id
 router.get('/barang/:id', function(req,res){
     barangController.getBarangById(req.params.id, function(err,respon){
@@ -21,14 +30,14 @@ router.get('/barang/:id', function(req,res){
     });
 });
 
-// router.get('/barang/kat/:kdKat', function(req,res){
-	// barangController.getBarangByKdKat(req.params.kdKat, function(err,respon){
-        // if(err){
-            // throw err;
-        // };
-        // res.json(respon);
-    // });
-// });
+router.get('/barang/brg/:kdBrg', function(req,res){
+	barangController.getBarangByKdBrg(req.params.kdBrg, function(err,respon){
+        if(err){
+            throw err;
+        };
+        res.json(respon);
+    });
+});
 
 //update
 router.put('/barang/:id', function(req,res){
