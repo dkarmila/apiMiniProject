@@ -15,6 +15,11 @@ module.exports.createPelanggan = function(prpns,callback){
 module.exports.getPelangganByNamaPelanggan = function(namapelanggan,callback){
     Pelanggan.find({NamaPelanggan:namapelanggan},callback);
 }
+
+module.exports.getPelangganByKdPelanggan = function(kdpelanggan,callback){
+    Pelanggan.find({KdPelanggan:kdpelanggan},callback);
+}
+
 module.exports.removePelanggan = function(_id,callback){
     Pelanggan.findByIdAndRemove(_id,callback);
 }
