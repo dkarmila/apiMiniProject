@@ -19,8 +19,8 @@ route.get('/penjualandetail/:_id',function(req,res){
     });
 });
 route.get('/kdpenjualan/:kdpenjualan',function(req,res){
-	let id = req.params._id;
-    penjualandetailController.getPenjualanDetailByKdPenjualan(id,function(err,respon){
+	let kdpenjualan = req.params.kdpenjualan;
+    penjualandetailController.getPenjualanDetailByKdPenjualan(kdpenjualan,function(err,respon){
         if(err){
             throw err;
         }

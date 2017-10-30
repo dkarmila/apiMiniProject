@@ -12,6 +12,10 @@ module.exports.getPetugasByNamaPetugas = function(namapetugas,callback){
     Petugas.find({NamaPetugas:namapetugas},callback);
 }
 
+module.exports.getPetugasByKdPetugas = function(kdpetugas,callback){
+    Petugas.find({KdPetugas:kdpetugas},callback);
+}
+
 module.exports.createPetugas = function(prpns,callback){
     Petugas.create(prpns,callback);
 }
