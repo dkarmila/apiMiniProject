@@ -8,6 +8,10 @@ module.exports.getPenjualanDetailById = function(_id,callback){
     PenjualanDetail.findById(_id,callback);
 }
 
+module.exports.getPenjualanDetailByKdPenjualan = function(kdpenjualan,callback){
+    PenjualanDetail.find({KdPenjualan:kdpenjualan},callback);
+}
+
 module.exports.createPenjualanDetail = function(prpns,callback){
     PenjualanDetail.create(prpns,callback);
 }

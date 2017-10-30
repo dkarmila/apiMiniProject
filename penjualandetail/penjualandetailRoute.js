@@ -18,6 +18,15 @@ route.get('/penjualandetail/:_id',function(req,res){
         res.json(respon);
     });
 });
+route.get('/kdpenjualan/:kdpenjualan',function(req,res){
+	let id = req.params._id;
+    penjualandetailController.getPenjualanDetailByKdPenjualan(id,function(err,respon){
+        if(err){
+            throw err;
+        }
+        res.json(respon);
+    });
+});
 route.post('/penjualandetail',function(req,res){
     let prpns = req.body;
     penjualandetailController.createPenjualanDetail(prpns,function(err,respon){
