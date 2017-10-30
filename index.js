@@ -31,26 +31,26 @@ app.set('port', (process.env.PORT || 8889));
 let barangRoute = require("./barang/barangRoute.js");
 app.use('/api', barangRoute);
 
-let kategoriBarangRoute = require("./kategoribarang/kategoribarangRoute.js");
-app.use('/api', kategoriBarangRoute);
+// let kategoriBarangRoute = require("./kategoribarang/kategoribarangRoute.js");
+// app.use('/api', kategoriBarangRoute);
 
-let pembelianRoute = require('./pembelian/pembelianRoute.js');
-app.use('/api', pembelianRoute);
+// let pembelianRoute = require('./pembelian/pembelianRoute.js');
+// app.use('/api', pembelianRoute);
 
-let pembelianDetailRoute =require('./pembeliandetail/pembeliandetailRoute.js');
-app.use('/api', pembelianDetailRoute);
+// let pembelianDetailRoute =require('./pembeliandetail/pembeliandetailRoute.js');
+// app.use('/api', pembelianDetailRoute);
 
-let petugasRoute = require('./petugas/petugasRoute');
-app.use('/api',petugasRoute);
+// let petugasRoute = require('./petugas/petugasRoute');
+// app.use('/api',petugasRoute);
 
-let pelangganRoute = require('./pelanggan/pelangganRoute');
-app.use('/api',pelangganRoute);
+// let pelangganRoute = require('./pelanggan/pelangganRoute');
+// app.use('/api',pelangganRoute);
 
-let penjualanRoute = require('./penjualan/penjualanRoute');
-app.use('/api',penjualanRoute);
+// let penjualanRoute = require('./penjualan/penjualanRoute');
+// app.use('/api',penjualanRoute);
 
-let penjualandetailRoute = require('./penjualandetail/penjualandetailRoute');
-app.use('/api',penjualandetailRoute);
+// let penjualandetailRoute = require('./penjualandetail/penjualandetailRoute');
+// app.use('/api',penjualandetailRoute);
 
 app.listen(app.get('port'), function(){
     console.log("Node app is running on port "+ app.get('port'));
