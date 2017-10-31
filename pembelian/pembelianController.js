@@ -4,6 +4,22 @@ module.exports.getPembelian=function(callback,limit){
     Pembelian.find(callback).limit(limit);
 }
 
+module.exports.getPembelianByKdBeli=function(kdBeli,callback){
+    Pembelian.aggregate([
+    {
+        $match:{
+            "KdPembelian":kdBeli
+        }
+    },{
+        "$lookup":{
+            from:"PembelianDetail",
+            localField:"KdPembelian",
+            foreignField:"KdPembelian",
+            as:"InfoDetail"
+        }
+    }], callback);
+}
+
 module.exports.getPembelianById=function(id, callback){
     Pembelian.findById(id, callback);
 }

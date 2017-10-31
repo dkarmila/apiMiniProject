@@ -24,8 +24,63 @@ module.exports.getBarangAgregat = function(callback){
 	}],callback);
 }
 
+module.exports.getBarangAgregatByKd = function(id,callback){
+	barang.aggregate([
+	{
+		"$match":{
+			"KdBarang":id
+		}
+	},
+	{
+		"$lookup":{
+			from:"KategoriBrg",
+			localField:"KdKategoriBarang",
+			foreignField:"KdKategoriBarang",
+			as:"InfoKatBarang"
+		}
+	},
+        {
+		"$lookup":{
+			from:"MerkBarang",
+			localField:"KdMerkBarang",
+			foreignField:"KdMerkBarang",
+			as:"InfoMerkBarang"
+		}
+	}],callback);
+}
+
+//agregat kategori barang
+module.exports.getBarangAgregatByKat = function(id,callback){
+	barang.aggregate([
+	{
+		"$match":{
+			"KdKategoriBarang":id
+		}
+	},
+	{
+		"$lookup":{
+			from:"KategoriBrg",
+			localField:"KdKategoriBarang",
+			foreignField:"KdKategoriBarang",
+			as:"InfoKatBarang"
+		}
+	},
+        {
+		"$lookup":{
+			from:"MerkBarang",
+			localField:"KdMerkBarang",
+			foreignField:"KdMerkBarang",
+			as:"InfoMerkBarang"
+		}
+	}],callback);
+}
+
 module.exports.getBarangByKdBrg = function(kdBrg, callback){
 	barang.find({KdBarang: kdBrg}, callback);
+}
+
+module.exports.getBarangByKdKatBrg = function(kdBrg, callback){
+	barang.find({KdKategoriBarang: kdBrg}, callback);
 }
 
 module.exports.getBarangById = function(id, callback, limit){

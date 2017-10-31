@@ -20,6 +20,15 @@ router.get('/pembelian/:id', function(req,res){
     });
 });
 
+router.get('/pembelian/rinci/:kdBeli', function(req,res){
+	pembelianController.getPembelianByKdBeli(req.params.kdBeli, function(err,respon){
+        if(err){
+            throw err;
+        };
+        res.json(respon);
+    });
+});
+
 router.put('/pembelian/:id', function(req,res){
     let dataPembelian = req.body;
     pembelianController.updatePembelian(req.params.id, dataPembelian, function(err,respon){

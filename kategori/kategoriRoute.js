@@ -21,14 +21,14 @@ router.get('/katbarang/:id', function(req, res){
     });
 });
 
-// router.get('/katbarang/kategori/:kd', function(req, res){
-//     kategoriController.getkategoriBarangByKdKat(req.params.kd, function(err,respon){
-//         if(err){
-//             throw err;
-//         };
-//         res.json(respon);
-//     });
-// });
+router.get('/katbarang/kategori/:kd', function(req, res){
+    kategoriController.getKategoriBarangByKdKat(req.params.kd, function(err,respon){
+        if(err){
+            throw err;
+        };
+        res.json(respon);
+    });
+});
 
 router.put('/katbarang/:id', function(req,res){
     let dataKategori = req.body;
