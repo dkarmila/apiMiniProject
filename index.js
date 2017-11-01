@@ -19,8 +19,8 @@ app.use(function(req, res, next){
 app.use(bodyParser.json());
 app.set('port', (process.env.PORT || 8889));
 
-// let loginRoute = require("./login/loginRoute.js");
-// app.use('/api', loginRoute);
+let loginRoute = require("./login/loginRoute.js");
+app.use('/api', loginRoute);
 
 let merkRoute = require("./merk/merkRoute.js");
 app.use('/api', merkRoute);

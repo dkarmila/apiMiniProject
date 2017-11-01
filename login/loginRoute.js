@@ -6,11 +6,12 @@ let User = require('./loginModel');
 global.config = require('../config/configjwt');
 //let UserController = require('./loginController.js');
 
-router.post('/login/authenticate', function(req, res){
+router.post('/login/auth', function(req, res){
     let data = {
-        Username: req.body.Username,
-        Password: req.body.Password
+        UsernamePetugas: req.body.UsernamePetugas,
+        PasswordPetugas: req.body.PasswordPetugas
     };
+    console.log(data);
     User.findOne(data).lean().exec(function(err, user){
         if(err){
             return res.json({error: true});

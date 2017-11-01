@@ -2,11 +2,16 @@ let mongoose = require('mongoose');
 
 let login = mongoose.Schema(
     {
-        Username: String,
-        Password: String
+        KdPetugas: String,
+        NamaPetugas: String,
+        AlamatPetugas: String,
+        NoTelp: String,
+        NoRmh: String,
+        UsernamePetugas: String,
+        PasswordPetugas: String
     },
     {
-        collection: 'Pengguna'
+        collection: 'Petugas'
     }
 )
 
