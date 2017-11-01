@@ -26,7 +26,25 @@ module.exports.getPenjualanById = function(_id,callback){
 }
 
 module.exports.getPenjualanKdPenjualan = function(kdpenjualan,callback){
-    Penjualan.find(KdPenjualan:kdpenjualan,callback);
+    Penjualan.aggregate([
+	{
+		"$lookup":{
+			from:"Petugas",
+			localField:"KdPetugas",
+			foreignField:"KdPetugas",
+			as:"petugasInfo"}
+	},{
+            "$lookup":{
+			from:"Pelanggan",
+			localField:"KdPelanggan",
+			foreignField:"KdPelanggan",
+			as:"pelangganInfo"}
+    },{
+		$match:{
+			"KdPenjualan":kdpenjualan
+		}
+	}
+	], callback);
 }
 
 module.exports.createPenjualan = function(prpns,callback){
