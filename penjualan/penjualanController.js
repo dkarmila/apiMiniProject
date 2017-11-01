@@ -28,12 +28,6 @@ module.exports.getPenjualanById = function(_id,callback){
 module.exports.getPenjualanKdPenjualan = function(kdpenjualan,callback){
     Penjualan.aggregate([
 	{
-		"$lookup":{
-			from:"Petugas",
-			localField:"KdPetugas",
-			foreignField:"KdPetugas",
-			as:"petugasInfo"}
-	},{
             "$lookup":{
 			from:"Pelanggan",
 			localField:"KdPelanggan",
