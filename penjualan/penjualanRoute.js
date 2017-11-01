@@ -20,7 +20,7 @@ route.get('/penjualan/:_id',function(req,res){
 });
 route.get('/kdpenjualan/:kdpenjualan',function(req,res){
 	let kdpenjualan = req.params.kdpenjualan;
-    penjualanController.getPenjualanKdPenjualan(id,function(err,respon){
+    penjualanController.getPenjualanKdPenjualan(kdpenjualan,function(err,respon){
         if(err){
             throw err;
         }
