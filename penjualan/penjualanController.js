@@ -25,6 +25,10 @@ module.exports.getPenjualanById = function(_id,callback){
     Penjualan.findById(_id,callback);
 }
 
+module.exports.getPenjualanKdPenjualan = function(kdpenjualan,callback){
+    Penjualan.find(KdPenjualan:kdpenjualan,callback);
+}
+
 module.exports.createPenjualan = function(prpns,callback){
     Penjualan.create(prpns,callback);
 }
