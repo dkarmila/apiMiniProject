@@ -12,6 +12,10 @@ module.exports.createPelanggan = function(prpns,callback){
     Pelanggan.create(prpns,callback);
 }
 
+module.exports.getPelangganByUsernamePelanggan = function(usernamepelanggan,callback){
+    Pelanggan.find({UsernamePelanggan:usernamepelanggan},callback);
+}
+
 module.exports.getPelangganByNamaPelanggan = function(namapelanggan,callback){
     Pelanggan.find({NamaPelanggan:namapelanggan},callback);
 }

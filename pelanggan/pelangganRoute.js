@@ -29,6 +29,16 @@ route.get('/namapelanggan/:namapelanggan',function(req,res){
     });
 });
 
+route.get('/usernamepelanggan/:usernamepelanggan',function(req,res){
+	let usernamepelanggan = req.params.usernamepelanggan;
+    pelangganController.getPelangganByUsernamePelanggan(usernamepelanggan,function(err,respon){
+        if(err){
+            throw err;
+        }
+        res.json(respon);
+    });
+});
+
 route.get('/kdpelanggan/:kdpelanggan',function(req,res){
 	let kdpelanggan = req.params.kdpelanggan;
     pelangganController.getPelangganByKdPelanggan(kdpelanggan,function(err,respon){
