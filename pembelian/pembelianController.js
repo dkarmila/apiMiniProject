@@ -4,6 +4,10 @@ module.exports.getPembelian=function(callback,limit){
     Pembelian.find(callback).limit(limit);
 }
 
+module.exports.getPembelianByKd=function(kd, callback){
+    Pembelian.find({KdPembelian:kd}, callback);
+}
+
 module.exports.getPembelianByKdBeli=function(kdBeli,callback){
     Pembelian.aggregate([
     {

@@ -8,7 +8,7 @@ router.get('/barang', function(req,res){
             throw err;
         };
         res.json(respon);
-    });
+    },1);
 });
 
 router.get('/barang/agregat', function(req,res){
@@ -58,6 +58,16 @@ router.get('/barang/brg/:kdBrg', function(req,res){
         };
         res.json(respon);
     });
+});
+
+//Kode Barang Limit
+router.get('/barang/brglimit/:kdBrg', function(req,res){
+	barangController.getBarangByKdBrgLimit(req.params.kdBrg, function(err,respon){
+        if(err){
+            throw err;
+        };
+        res.json(respon);
+    },4);
 });
 
 //Kode KategoriBarang
