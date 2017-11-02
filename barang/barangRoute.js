@@ -8,7 +8,7 @@ router.get('/barang', function(req,res){
             throw err;
         };
         res.json(respon);
-    },1);
+    });
 });
 
 router.get('/barang/agregat', function(req,res){
