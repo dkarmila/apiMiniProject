@@ -35,3 +35,8 @@ module.exports.createPembelian=function(dataPembelian, callback){
 module.exports.rmvPembelian=function(id, callback){
     Pembelian.findByIdAndRemove(id, callback);
 }
+
+module.exports.rmvPembelianByKdBeli=function(id, callback){
+    Pembelian.remove(
+        {"KdPembelian":id}, callback);
+}

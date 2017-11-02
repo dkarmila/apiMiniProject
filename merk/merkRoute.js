@@ -29,6 +29,15 @@ router.get('/merkbarang/merk/:kd', function(req, res){
     });
 });
 
+router.get('/merkbarang/nama/:nama', function(req, res){
+    merkController.getMerkBarangByNama(req.params.nama, function(err,respon){
+        if(err){
+            throw err;
+        };
+        res.json(respon);
+    });
+});
+
 router.put('/merkbarang/:id', function(req,res){
     let dataMerk = req.body;
     merkController.updateMerkBarang(req.params.id, dataMerk, function(err,respon){

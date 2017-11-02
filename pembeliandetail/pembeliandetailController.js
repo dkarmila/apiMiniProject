@@ -23,3 +23,8 @@ module.exports.createPembelianDetail = function(dataPembelianDetail, callback){
 module.exports.rmvPembelianDetail = function(id, callback){
     PembelianDetail.findByIdAndRemove(id, callback);
 }
+
+module.exports.rmvPembelianDetailMany = function(id, callback){
+    PembelianDetail.remove(
+        {"KdPembelian":id}, callback);
+}

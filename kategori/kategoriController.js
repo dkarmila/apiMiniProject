@@ -12,6 +12,10 @@ module.exports.getKategoriBarangByKdKat = function(kd, callback){
     KatBarang.find({KdKategoriBarang:kd}, callback);
 }
 
+module.exports.getKategoriBarangByNama = function(nama, callback){
+    KatBarang.find({NamaKategoriBarang:nama}, callback);
+}
+
 module.exports.updateKategoriBarang = function(id, dataKategori, callback){
     KatBarang.findByIdAndUpdate(id, dataKategori, callback);
 }

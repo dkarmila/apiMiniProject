@@ -30,6 +30,15 @@ router.get('/katbarang/kategori/:kd', function(req, res){
     });
 });
 
+router.get('/katbarang/nama/:nama', function(req, res){
+    kategoriController.getKategoriBarangByNama(req.params.nama, function(err,respon){
+        if(err){
+            throw err;
+        };
+        res.json(respon);
+    });
+});
+
 router.put('/katbarang/:id', function(req,res){
     let dataKategori = req.body;
     kategoriController.updateKategoriBarang(req.params.id, dataKategori, function(err,respon){

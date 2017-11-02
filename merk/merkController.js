@@ -12,6 +12,10 @@ module.exports.getMerkBarangByKdKat = function(kd, callback){
     MerkBarang.find({KdMerkBarang:kd}, callback);
 }
 
+module.exports.getMerkBarangByNama = function(nama, callback){
+    MerkBarang.find({NamaMerkBarang:nama}, callback);
+}
+
 module.exports.updateMerkBarang = function(id, dataMerk, callback){
     MerkBarang.findByIdAndUpdate(id, dataMerk, callback);
 }

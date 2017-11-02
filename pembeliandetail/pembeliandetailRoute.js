@@ -58,4 +58,13 @@ router.delete('/pembeliandetail/:id', function(req,res){
     });
 });
 
+router.delete('/pembeliandetail/many/:id', function(req,res){
+    pembelianDetailController.rmvPembelianDetailMany(req.params.id, function(err,respon){
+        if(err){
+            throw err;
+        };
+        res.json(respon);
+    });
+});
+
 module.exports=router;

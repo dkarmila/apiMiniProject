@@ -60,5 +60,14 @@ router.delete('/pembelian/:id', function(req,res){
     });
 });
 
+router.delete('/pembelian/kdbeli/:id', function(req,res){
+    pembelianController.rmvPembelianByKdBeli(req.params.id, function(err,respon){
+        if(err){
+            throw err;
+        };
+        res.json(respon);
+    });
+});
+
 
 module.exports=router;

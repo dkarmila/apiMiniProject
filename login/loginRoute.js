@@ -27,5 +27,4 @@ router.post('/login/auth', function(req, res){
         res.json({error:false,token:token});
     });
 });
-
 module.exports=router;
