@@ -27,7 +27,7 @@ route.get('/kdpenjualan/:kdpenjualan',function(req,res){
         res.json(respon);
     });
 });
-route.get('/kdpelanggan/:kdpelanggan',function(req,res){
+route.get('/penjualan/kdpelanggan/:kdpelanggan',function(req,res){
 	let kdpelanggan = req.params.kdpelanggan;
     penjualanController.getPenjualanKdPelanggan(kdpelanggan,function(err,respon){
         if(err){
