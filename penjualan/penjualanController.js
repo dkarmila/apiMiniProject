@@ -41,6 +41,10 @@ module.exports.getPenjualanKdPenjualan = function(kdpenjualan,callback){
 	], callback);
 }
 
+module.exports.getPenjualanKdPelanggan = function(kdpelanggan,callback){
+    Penjualan.find({KdPelanggan:kdpelanggan}, callback);
+}
+
 module.exports.createPenjualan = function(prpns,callback){
     Penjualan.create(prpns,callback);
 }
