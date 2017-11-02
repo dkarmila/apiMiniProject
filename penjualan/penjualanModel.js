@@ -2,7 +2,6 @@ let mong = require('mongoose');
 let penjualan = mong.Schema({
     KdPenjualan:String,
     KdPelanggan:String,
-    KdPenjualan:String,
 	TglPenjualan: Date,
 	JmlItem:Number,
 	TotalHargaJual:Number,
