@@ -20,6 +20,26 @@ router.get('/barang/agregat', function(req,res){
     });
 });
 
+//agregat limit
+router.get('/barang/agregatlimit/:limit', function(req,res){
+    barangController.getBarangAgregatLimit(req.params.limit, function(err,respon){
+        if(err){
+            throw err;
+        };
+        res.json(respon);
+    });
+});
+
+//agregat match
+router.get('/barang/agregatmatch/:namamerk', function(req,res){
+    barangController.getBarangAgregatMatchMerk(req.params.namamerk, function(err,respon){
+        if(err){
+            throw err;
+        };
+        res.json(respon);
+    });
+});
+
 //agregat kode barang
 router.get('/barang/agregat/:id', function(req,res){
     barangController.getBarangAgregatByKd(req.params.id, function(err,respon){

@@ -24,6 +24,55 @@ module.exports.getBarangAgregat = function(callback){
 	}],callback);
 }
 
+module.exports.getBarangAgregatLimit = function(limit,callback){
+	barang.aggregate([
+	{
+		"$lookup":{
+			from:"KategoriBrg",
+			localField:"KdKategoriBarang",
+			foreignField:"KdKategoriBarang",
+			as:"InfoKatBarang"
+		}
+	},
+        {
+		"$lookup":{
+			from:"MerkBarang",
+			localField:"KdMerkBarang",
+			foreignField:"KdMerkBarang",
+			as:"InfoMerkBarang"
+		}
+	},{
+		$limit:Number(limit)
+	}
+	],callback);
+}
+
+module.exports.getBarangAgregatMatchMerk = function(namaMerk, callback){
+	barang.aggregate([
+	{
+		"$lookup":{
+			from:"KategoriBrg",
+			localField:"KdKategoriBarang",
+			foreignField:"KdKategoriBarang",
+			as:"InfoKatBarang"
+		}
+	},
+        {
+		"$lookup":{
+			from:"MerkBarang",
+			localField:"KdMerkBarang",
+			foreignField:"KdMerkBarang",
+			as:"InfoMerkBarang"
+		}
+	},
+	{
+		$match:{
+			"InfoMerkBarang.NamaMerkBarang":{'$regex': '.*'+namaMerk+'.*'}
+		}
+	}
+	],callback);
+}
+
 module.exports.getBarangAgregatByKd = function(id,callback){
 	barang.aggregate([
 	{
