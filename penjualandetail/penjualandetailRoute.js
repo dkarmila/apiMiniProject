@@ -18,7 +18,8 @@ route.get('/penjualandetail/:_id',function(req,res){
         res.json(respon);
     });
 });
-route.get('/kdpenjualan/:kdpenjualan',function(req,res){
+//rubah disini
+route.get('/penjualandetail/kdpenjualan/:kdpenjualan',function(req,res){
 	let kdpenjualan = req.params.kdpenjualan;
     penjualandetailController.getPenjualanDetailByKdPenjualan(kdpenjualan,function(err,respon){
         if(err){
