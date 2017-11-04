@@ -11,6 +11,15 @@ router.get('/barang', function(req,res){
     });
 });
 
+router.get('/barang/match/:kat/:merk/:tipe', function(req,res){
+    barangController.getBarangMatch(req.params.kat, req.params.merk, req.params.tipe, function(err,respon){
+        if(err){
+            throw err;
+        };
+        res.json(respon);
+    });
+});
+
 router.get('/barang/agregat', function(req,res){
     barangController.getBarangAgregat(function(err,respon){
         if(err){

@@ -29,6 +29,7 @@ router.get('/pembelian/kd/:id', function(req,res){
     });
 });
 
+//agregat
 router.get('/pembelian/rinci/:kdBeli', function(req,res){
 	pembelianController.getPembelianByKdBeli(req.params.kdBeli, function(err,respon){
         if(err){

@@ -24,7 +24,7 @@ router.post('/login/auth', function(req, res){
             expiresIn: 1440 // expires in 1 hour
         });
         //console.log(token);
-        res.json({error:false,token:token});
+        res.json({error:false,token:token,user:user});
     });
 });
 module.exports=router;

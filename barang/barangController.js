@@ -4,6 +4,21 @@ module.exports.getBarang = function(callback,limit){
     barang.find(callback).limit(limit);
 }
 
+module.exports.getBarangMatch = function(kat, merk, tipe, callback,limit){
+    barang.find(
+	{
+		$and:[
+			{
+				KdKategoriBarang:kat
+			},{
+				KdMerkBarang:merk
+			},{
+				TypeBarang:tipe
+			}
+		]
+	},callback).limit(limit);
+}
+
 module.exports.getBarangAgregat = function(callback){
 	barang.aggregate([
 	{
