@@ -40,8 +40,17 @@ router.get('/pembelian/rinci/:kdBeli', function(req,res){
 });
 
 //agregat dengan petugas by kdPetugas
-router.get('/pembelian/agregat/:kt', function(req,res){
-	pembelianController.getPembelianAgregatKdPet(req.params.kt, function(err, respon){
+router.get('/pembelian/agregat/:kb/:kt', function(req,res){
+	pembelianController.getPembelianAgregatKdPet(req.params.kb, req.params.kt, function(err, respon){
+		if(err){
+			throw err;
+		};
+		res.json(respon);
+	});
+});
+
+router.get('/pembelian/agregatpetugas', function(req,res){
+	pembelianController.getPembelianAgregatPetugas(function(err, respon){
 		if(err){
 			throw err;
 		};
