@@ -34,9 +34,19 @@ router.get('/pembelian/rinci/:kdBeli', function(req,res){
 	pembelianController.getPembelianByKdBeli(req.params.kdBeli, function(err,respon){
         if(err){
             throw err;
-        };
+        }
         res.json(respon);
     });
+});
+
+//agregat dengan petugas by kdPetugas
+router.get('/pembelian/agregat/:kt', function(req,res){
+	pembelianController.getPembelianAgregatKdPet(req.params.kt, function(err, respon){
+		if(err){
+			throw err;
+		};
+		res.json(respon);
+	});
 });
 
 router.put('/pembelian/:id', function(req,res){

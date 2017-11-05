@@ -24,6 +24,23 @@ module.exports.getPembelianByKdBeli=function(kdBeli,callback){
     }], callback);
 }
 
+//agregat by kode petugas
+module.exports.getPembelianAgregatKdPet = function(kt, callback){
+	Pembelian.aggregate([
+	{
+		$match:{
+			"KdPetugas":kt
+		}
+	},{
+		"$lookup":{
+			from: "Petugas",
+			localField: "KdPetugas",
+			foreignField: "KdPetugas",
+			as: "InfoPetugas"
+		}
+	}], callback);
+}
+
 module.exports.getPembelianById=function(id, callback){
     Pembelian.findById(id, callback);
 }
