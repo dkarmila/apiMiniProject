@@ -5,6 +5,7 @@ let penjualandetail = mong.Schema({
 	JmlBarang: Number,
 	SubTotal:Number,
 	NamaBang:String,
-	HargaBarang:Number
+	HargaBarang:Number,
+	KategoriBarang:String
 });
 let PenjualanDetail = module.exports =  mong.model("PenjualanDetail",penjualandetail,"PenjualanDetail");
