@@ -23,7 +23,7 @@ route.get('/petugas/:_id',function(req,res){
 
 route.get('/jeniskelamin/petugas/:jeniskelamin',function(req,res){
 	let jeniskelamin = req.params.jeniskelamin;
-    petugasController.getPetugasByJenisKelamin(id,function(err,respon){
+    petugasController.getPetugasByJenisKelamin(jeniskelamin,function(err,respon){
         if(err){
             throw err;
         }
