@@ -6,6 +6,7 @@ let petugas = mong.Schema({
 	NoRmh:String,
 	NoTelp: String,
 	UsernamePetugas:String,
-	PasswordPetugas:String
+	PasswordPetugas:String,
+	JenisKelamin:String
 });
 let Petugas = module.exports =  mong.model("Petugas",petugas,"Petugas");
