@@ -21,6 +21,16 @@ route.get('/petugas/:_id',function(req,res){
     });
 });
 
+route.get('/jeniskelamin/petugas/:jeniskelamin',function(req,res){
+	let jeniskelamin = req.params.jeniskelamin;
+    petugasController.getPetugasByJenisKelamin(id,function(err,respon){
+        if(err){
+            throw err;
+        }
+        res.json(respon);
+    });
+});
+
 route.get('/usernamepetugas/:usernamepetugas',function(req,res){
 	let usernamepetugas = req.params.usernamepetugas;
     petugasController.getPetugasByUsernamePetugas(usernamepetugas,function(err,respon){
